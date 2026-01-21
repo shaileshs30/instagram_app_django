@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Instagram Clone{% endblock %}</title>
+    <style>
+        /* Purple & Pink Theme */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f5f0fa; /* light purple background */
+            margin: 0;
+            padding: 0;
+            color: #333;
+        }
+
+        nav {
+            background-color: #6a0dad; /* deep purple primary */
+            color: white;
+            padding: 15px 30px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin-right: 20px;
+            font-weight: bold;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: #ff69b4; /* pink secondary hover */
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 30px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+
+        h2, h3 {
+            color: #6a0dad; /* headings in deep purple */
+        }
+
+        form textarea, form input[type="file"] {
+            width: 100%;
+            padding: 10px;
+            margin: 8px 0 15px 0;
+            border-radius: 5px;
+            border: 1px solid #e6c0f2; /* soft pink border */
+            font-size: 16px;
+            box-sizing: border-box;
+        }
+
+        form textarea:focus, form input:focus {
+            outline: none;
+            border-color: #6a0dad; /* purple focus */
+            box-shadow: 0 0 5px rgba(106,13,173,0.5); /* purple glow */
+        }
+
+        button {
+            background-color: #6a0dad; /* purple button */
+            color: white;
+            border: none;
+            padding: 12px 25px;
+            cursor: pointer;
+            border-radius: 5px;
+            font-weight: bold;
+            transition: all 0.3s;
+        }
+
+        button:hover {
+            background-color: #5a0ca0; /* darker purple on hover */
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+        }
+
+        .post-card {
+            border: 1px solid #e6c0f2; /* pink border */
+            padding: 15px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+
+        .post-card img {
+            max-width: 100%;
+            border-radius: 5px;
+            margin: 10px 0;
+        }
+
+        a {
+            color: #6a0dad; /* purple links */
+        }
+
+        a:hover {
+            color: #ff69b4; /* pink link hover */
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div>
+            <a href="{% url 'post_list' %}">Feed</a>
+            <a href="{% url 'post_create' %}">Add Post</a>
+        </div>
+    </nav>
+    <div class="container">
+        {% block content %}{% endblock %}
+    </div>
+</body>
+</html>

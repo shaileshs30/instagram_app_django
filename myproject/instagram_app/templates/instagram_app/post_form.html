@@ -1,0 +1,13 @@
+{% extends "instagram_app/base.html" %}
+
+{% block title %}Create Post{% endblock %}
+
+{% block content %}
+<h2>Create Post</h2>
+<form method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    <textarea name="caption" placeholder="Caption" required></textarea>
+    <input type="file" name="image">
+    <button type="submit">Post</button>
+</form>
+{% endblock %}
